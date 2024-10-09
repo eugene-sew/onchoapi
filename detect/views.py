@@ -16,7 +16,7 @@ def history(request):
     return JsonResponse(session_data, safe=False)
 
 
-model = load_model('./models/model.keras')
+model = load_model('./models/panda_model.keras')
 
 # Image processing helper functions
 def load_and_preprocess_image(image_file, img_dim=(1536, 128)):
