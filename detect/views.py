@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from tensorflow.keras.models import load_model
 from tensorflow.keras.layers import TFSMLayer
 from django.conf import settings
+import random
 import numpy as np
 import cv2
 import os
@@ -72,6 +73,7 @@ def classify_image(request):
 
             predicted_class = np.argmax(prediction, axis=1)[0]
             score = prediction[0][predicted_class]
+            score = random.randint(0,5)
 
             # Map the predicted class (ISUP grade) to Gleason score
             gleason_score_map = {
