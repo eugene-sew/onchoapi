@@ -73,7 +73,7 @@ def classify_image(request):
 
             predicted_class = np.argmax(prediction, axis=1)[0]
             score = prediction[0][predicted_class]
-            score = random.randint(0,5)
+            
 
             # Map the predicted class (ISUP grade) to Gleason score
             gleason_score_map = {
